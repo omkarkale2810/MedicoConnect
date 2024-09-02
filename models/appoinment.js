@@ -1,4 +1,4 @@
-const { Schema, Model } = require("mongoose");
+const { Schema, model } = require("mongoose");
 
 const appointmentSchema = new Schema({
     patient: {
@@ -29,6 +29,6 @@ const appointmentSchema = new Schema({
 },
 { timestamps: true });
 
-const appointment = Model("appointment", appointmentSchema);
+const appointment = model("appointment", appointmentSchema);
 
 module.exports = appointment;

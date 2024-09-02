@@ -1,4 +1,4 @@
-const { Schema, Model } = require("mongoose");
+const { Schema, model } = require("mongoose");
 
 const doctorSchema = new Schema({
     fullname: {
@@ -9,6 +9,17 @@ const doctorSchema = new Schema({
         type: String,
         required: true,
         unique: true,
+    }, 
+    salt:{
+        type:String,
+    },
+    password:{
+        type:String,
+        required:true
+    },
+    Profilephotourl:{
+        type:String,
+        default:"/images/default-profile.jpg"
     },
     specialization: {
         type: String,
@@ -27,5 +38,5 @@ const doctorSchema = new Schema({
 },
 { timestamps: true });
 
-const doctor = Model("doctor", doctorSchema);
+const doctor = model("doctor", doctorSchema);
 module.exports = doctor;
